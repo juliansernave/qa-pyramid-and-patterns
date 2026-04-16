@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx playwright *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://parabank.parasoft.com/parabank/services/bank/login/john/demo\" -H \"Accept: application/json\")",
+      "Bash(curl -s \"https://parabank.parasoft.com/parabank/services/bank/login/john/demo\" -H \"Accept: application/json\")",
+      "Bash(curl -s \"https://parabank.parasoft.com/parabank/services/bank/customers/12212/accounts\" -H \"Accept: application/json\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -X POST \"https://parabank.parasoft.com/parabank/services/bank/transfer?fromAccountId=12345&toAccountId=12456&amount=10\" -H \"Accept: application/json\")",
+      "Bash(curl -s -X POST \"https://parabank.parasoft.com/parabank/services/bank/transfer?fromAccountId=12345&toAccountId=12456&amount=10\" -H \"Accept: application/json\")",
+      "Bash(curl -s -X POST \"https://parabank.parasoft.com/parabank/services/bank/createAccount?customerId=12212&newAccountType=1&fromAccountId=12345\" -H \"Accept: application/json\")",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\" \"https://parabank.parasoft.com/parabank/services/bank/login/john/wrongpassword\" -H \"Accept: application/json\")",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\" -X POST \"https://parabank.parasoft.com/parabank/services/bank/transfer?fromAccountId=99999&toAccountId=12456&amount=10\" -H \"Accept: application/json\")",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\" -X POST \"https://parabank.parasoft.com/parabank/services/bank/transfer?fromAccountId=12345&toAccountId=12456&amount=0\" -H \"Accept: application/json\")",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\" \"https://parabank.parasoft.com/parabank/services/bank/customers/99999/accounts\" -H \"Accept: application/json\")",
+      "Bash(curl -s -w \"\\\\nHTTP %{http_code}\" \"https://parabank.parasoft.com/parabank/services/bank/login/john/demo\" -H \"Accept: application/json\")",
+      "Bash(cat)",
+      "Bash(node /tmp/check-selectors.mjs)",
+      "Bash(curl -s \"https://parabank.parasoft.com/parabank/login.htm\")",
+      "Bash(curl -s -L \"https://parabank.parasoft.com/parabank/login.htm\")",
+      "Bash(curl -s -L -c /tmp/parabank-cookies.txt \"https://parabank.parasoft.com/parabank/login.htm\")",
+      "Bash(curl -sv \"https://parabank.parasoft.com/parabank/login.htm\")",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://parabank.parasoft.com/parabank/login.htm\")",
+      "Bash(curl -sv -A \"Mozilla/5.0\" \"https://parabank.parasoft.com/parabank/login.htm\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://parabank.parasoft.com/parabank/login.htm\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://parabank.parasoft.com/parabank/index.htm\")",
+      "Bash(curl -sv -A \"Mozilla/5.0\" \"https://parabank.parasoft.com/parabank/index.htm\")",
+      "Bash(curl -s -c /tmp/pb.jar -A \"Mozilla/5.0\" \"https://parabank.parasoft.com/parabank/index.htm\" -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s -b /tmp/pb.jar -c /tmp/pb.jar -A Mozilla/5.0 -X POST https://parabank.parasoft.com/parabank/login.htm -d 'username=john&password=demo' -L -o /dev/null -w '%{url_effective}')",
+      "Bash(curl -s -b /tmp/pb.jar -A \"Mozilla/5.0\" \"https://parabank.parasoft.com/parabank/transfer.htm\")",
+      "Bash(curl -s -c /tmp/pb2.jar -A \"Mozilla/5.0\" \"https://parabank.parasoft.com/parabank/index.htm\" -o /dev/null)",
+      "Bash(curl -s -b /tmp/pb2.jar -c /tmp/pb2.jar -A Mozilla/5.0 -X POST https://parabank.parasoft.com/parabank/login.htm -d 'username=john&password=wrong' -L -w '\\\\nFINAL_URL: %{url_effective}\\\\nHTTP: %{http_code}\\\\n')",
+      "Bash(curl -s -b /tmp/pb2.jar -c /tmp/pb2.jar -A Mozilla/5.0 -X POST https://parabank.parasoft.com/parabank/login.htm -d 'username=john&password=wrong' -L -w '\\\\nFINAL_URL: %{url_effective}')"
+    ]
+  }
+}

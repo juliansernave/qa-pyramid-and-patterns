@@ -1,0 +1,14 @@
+{
+  "name": "parabank-learning",
+  "version": "1.0.0",
+  "description": "Educational project: Test Pyramid layers and Design Patterns with Playwright + ParaBank",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test tests/api/",
+    "test:ui": "playwright test tests/ui/",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
